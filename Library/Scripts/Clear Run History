@@ -1,1 +1,26 @@
-test
+REM NOWURLEARNING
+REM Clear Run History
+
+
+DELAY 2000
+GUI r
+DELAY 500
+
+REM Type 'regedit' and open the Registry Editor as administrator (UAC prompt will appear)
+STRING regedit
+ENTER
+DELAY 1000
+REM Press Alt + Y to accept the UAC prompt (assuming default settings)
+ALT y
+DELAY 1000
+
+REM Navigate to the RunMRU key (can be done more efficiently with a direct path in a single command if UAC is handled)
+REM A script would typically automate key navigation or a direct command via powershell
+REM Since direct registry key deletion via regedit UI is complex for DuckyScript, a PowerShell command is more reliable
+
+REM Use PowerShell to delete the RunMRU key
+GUI r
+DELAY 500
+STRING powershell.exe -Command "Remove-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU -Name '*' -ErrorAction SilentlyContinue; Stop-Process -Name explorer"
+ENTER
+DELAY 2000
