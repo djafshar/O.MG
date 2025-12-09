@@ -1,0 +1,19 @@
+REM Nowurlearning
+
+REM Open Notepad and write something
+
+DELAY 2000
+GUI r
+DELAY 300
+STRING notepad.exe
+ENTER
+DELAY 1000
+REM write your message in the string
+STRING Please know, that I am watching you NOW!!!
+DELAY 500
+REM now save your message
+CTRL s
+DELAY 500
+REM title your message
+STRING yourtitlehere.txt
+ENTER
